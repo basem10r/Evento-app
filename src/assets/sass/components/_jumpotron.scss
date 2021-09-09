@@ -1,0 +1,17 @@
+.e-jumpotron {
+    &__title {
+        color: $black;
+        margin-bottom: 24px;
+        font-weight: 600;
+    }
+    &__desc {
+        color: $gray-600;
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+}
+.e-social {
+    &__btn {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,23 @@
+.e-login {
+    height: 100vh;
+    &__right {
+        background-size: cover;
+        background-position: bottom left;
+    }
+    &__left {
+        background-color: $secondary;
+    }
+    &__cont {
+        max-width: 350px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.e-logo {
+    margin-bottom: 24px;
+    &__img {
+        min-width: 60px;
+        width: 60px;
+    }
+}

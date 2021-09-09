@@ -1,0 +1,36 @@
+.e-shape {
+    max-width: 500px;
+    &__upper {
+        .e-shape__child {
+            margin-bottom: 16px;
+        }
+    }
+    &__child {
+        width: 100%;
+        padding: 0 8px;
+    }
+    &__rec {
+        height: 20vw;
+        width: 20vw;
+        background: $white;
+        border-radius: 25px;
+        background-size: 400px;
+        background-repeat: no-repeat;
+        &--small {
+            width: 15vw;
+            height: 15vw;
+        }
+        &--first {
+            background-position: top left;
+        }
+        &--second {
+            background-position: top right;
+        }
+        &--third {
+            background-position: bottom left;
+        }
+        &--fourth {
+            background-position: bottom left;
+        }
+    }
+}

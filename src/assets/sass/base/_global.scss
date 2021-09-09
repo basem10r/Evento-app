@@ -1,0 +1,30 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -moz-osx-font-smoothings: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family;
+  background: $white;
+  line-height: 1;
+}
+a {
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba($secondary, 0.5), rgba($secondary, 0.7));
+  z-index: 1;
+}

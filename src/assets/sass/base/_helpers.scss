@@ -1,0 +1,70 @@
+// font-size
+
+.font-20 {
+  font-size: 20px !important;
+}
+.font-16-sm {
+  @media #{$max-mobile} {
+    font-size: 16px !important;
+  }
+}
+.font-30 {
+  font-size: 30px !important;
+}
+.font-40 {
+  font-size: 40px !important;
+}
+.font-90 {
+  font-size: 64px !important;
+  @media #{$max-medium} {
+    font-size: 40px !important;
+  }
+}
+
+.font-bold {
+  font-weight: bold !important;
+}
+.font-dark {
+  color: $secondary !important;
+}
+.line-height-md {
+  line-height: 1.5 !important;
+}
+.max-width-490 {
+  max-width: 490px !important;
+}
+.color-primary {
+  color: $primary;
+}
+.color-secondary {
+  color: $secondary !important;
+}
+.w-400 {
+  max-width: 400px;
+  width: 100%;
+}
+.overflow-hidden {
+  overflow: hidden !important;
+}
+.p-50-100 {
+  padding: 50px 100px;
+  @media #{$max-medium} {
+    padding: 20px;
+  }
+}
+.bg-dark {
+  background: $secondary-100 !important;
+}
+.shape-right-middle {
+  position: absolute;
+  right: 0;
+  bottom: 100px;
+  width: 300px;
+  z-index: -1;
+}
+
+.h-50 {
+  @media #{$max-large} {
+    height: 50vh !important;
+  }
+}
