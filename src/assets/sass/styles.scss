@@ -23,9 +23,12 @@
 @import "components/_loader.scss";
 @import "components/_jumpotron.scss";
 @import "components/_shape.scss";
+@import "components/_event.scss";
+@import "components/_empty-state.scss";
 
-// Import components styles
-
+// Import layout styles
+@import "layouts/sidemenu";
+@import "layouts/containers";
 // import pages style
 @import "pages/_login.scss";
 

@@ -1,19 +1,59 @@
+.e-login__btn button {
+  border-radius: 25px !important;
+  background-color: $white;
+  height: 48px;
+  line-height: 48px;
+  width: 100%;
+  justify-content: center !important;
+  align-items: center !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  color: $black !important;
+  div {
+    padding: 0 !important;
+    margin-right: 10px !important;
+  }
+  &:hover {
+    color: $primary;
+    background: $white !important;
+  }
+}
+
 .btn {
-  &-social {
-    border-radius: 25px;
-    background-color: $white;
-    height: 48px;
-    line-height: 48px;
+  border-radius: 25px;
+  padding: 0 20px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border: 0;
+  @include transition();
+  &-primary {
+    background: $primary;
+  }
+  &-icon {
+    padding: 0 8px;
+  }
+  &-shadow {
+    @include shadow(0, 10px, 35px, 0, rgba($primary, 0.6));
+  }
+  &-circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: $white;
+    margin-right: 10px;
+    color: $primary;
+    font-size: 14px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 16px;
-    &:hover {
-      color: $primary;
-    }
-    img {
-      width: 20px;
-      margin: 0 10px;
-    }
+    justify-content: center;
+  }
+  &.h-36 {
+    height: 36px;
+  }
+  &:hover {
+    background: lighten($primary, 10%);
   }
 }

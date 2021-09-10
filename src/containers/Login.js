@@ -1,8 +1,10 @@
 import React from 'react';
 import Logo from '../assets/images/logo.png';
 import Jumpotron from '../components/login/Jumpotron';
-import Shape from '../components/login/Shape';
-import background from '../assets/images/login-bg.png'
+import Shape from '../assets/images/shape.png'
+import background from '../assets/images/login-bg.png';
+import LoginBtn from '../components/login/LoginBtn';
+import LogoutBtn from '../components/LogoutBtn';
 
 const Login = () => {
     return (
@@ -14,6 +16,11 @@ const Login = () => {
                         <img className="e-logo__img" alt="logo" src={Logo}></img>
                     </div>
                     <Jumpotron />
+                    {/* google sign in button  */}
+                    <div className="e-login__btn">
+                        <LoginBtn />
+                        <LogoutBtn className="d-none" />
+                    </div>
                 </div>
             </div>
             {/* left wing  */}
@@ -21,7 +28,7 @@ const Login = () => {
                 className="e-login__right col d-flex justify-content-center align-items-center px-0"
                 style={{ backgroundImage: `url(${background})` }}
             >
-                <Shape />
+                <img alt="shape" src={Shape}></img>
             </div>
         </div>
     )

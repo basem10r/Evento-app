@@ -39,6 +39,9 @@
 .color-secondary {
   color: $secondary !important;
 }
+.color-text {
+  color: $gray-600;
+}
 .w-400 {
   max-width: 400px;
   width: 100%;
@@ -67,4 +70,15 @@
   @media #{$max-large} {
     height: 50vh !important;
   }
+}
+.truncate-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.margin-minus-15 {
+  margin-left: -15px;
+  margin-right: -15px;
 }
