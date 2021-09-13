@@ -72,3 +72,6 @@
     background: lighten($primary, 10%);
   }
 }
+.MuiCircularProgress-colorPrimary {
+  color: $white !important;
+}

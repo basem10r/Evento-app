@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import { TextField, Select, MenuItem, FilledInput, InputAdornment, FormControl } from '@material-ui/core';
+import { TextField, Select, MenuItem, FilledInput, InputAdornment, FormControl, CircularProgress } from '@material-ui/core';
 import {
     KeyboardDatePicker,
     KeyboardTimePicker
@@ -7,10 +7,11 @@ import {
 import { eventTypes, eventDetails, addEvent, formats } from '../../static/Strings';
 import { FaUpload } from 'react-icons/fa';
 
-const AddForm = ({ onAdd }) => {
+const AddForm = ({ isLoading, onAdd }) => {
     // event state 
     const [event, setEvent] = useState({
         imageFile: '',
+        imageUrl: '',
         title: '',
         types: [],
         location: '',
@@ -29,6 +30,10 @@ const AddForm = ({ onAdd }) => {
             setEvent({ ...event, [prop]: e.target.value });
     };
 
+    const handleFileChange = (prop) => (e) => {
+        const image = e.target.files[0]
+        setEvent({ ...event, [prop]: image });
+    }
     // disable submit button 
     const buttonDisabled = () => {
         return event.title && event.types && event.location && event.desc && event.cost && event.date && event.time
@@ -59,6 +64,30 @@ const AddForm = ({ onAdd }) => {
             {/* event cover  */}
             <div className="row">
                 <div className="col-12 col-md-12">
+                    <div className="e-form__row row">
+                        <div className="col-12 col-md-4">
+                            <label className="e-form__label">{addEvent.EVENT_COVER} <span>*</span></label>
+                        </div>
+                        <div className="col-12 col-md-8">
+                            <input
+                                accept="image/*"
+                                id="imageFile"
+                                name="imageFile"
+                                className="d-none"
+                                type="file"
+                                onChange={handleFileChange('imageFile')}
+                            />
+                            <label htmlFor="imageFile" className="e-upload__field d-flex justify-content-between align-items-center">
+                                {
+                                    event.imageFile.name ?
+                                        <span className="e-upload__label font-16">{event.imageFile.name}</span> :
+                                        <span className="e-upload__label font-16 color-text">{addEvent.UPLOAD} <span>*</span></span>
+                                }
+                                <span className="btn btn-primary btn-primary-upload e-upload__btn"><FaUpload></FaUpload></span>
+                            </label>
+                        </div>
+
+                    </div>
                     {/* title  */}
                     <div className="e-form__row row  d-flex mt-4">
                         <div className="col-12 col-md-4">
@@ -123,6 +152,7 @@ const AddForm = ({ onAdd }) => {
                             <FormControl fullWidth size="small" variant="outlined">
                                 <FilledInput
                                     placeholder={addEvent.COST}
+                                    type="number"
                                     name="cost"
                                     value={event.cost}
                                     onChange={handleChange('cost')}
@@ -188,7 +218,15 @@ const AddForm = ({ onAdd }) => {
                     </div>
                     <div className="e-form__row row  d-flex justify-content-end mt-5">
                         <div className="e-form__submit">
-                            <button disabled={!buttonDisabled()} type="submit" className="btn btn-primary" >Publish Event</button>
+                            {
+                                isLoading ?
+                                    <button className="btn btn-primary w-130">
+                                        <CircularProgress className="text-white" size={30} />
+                                    </button> :
+                                    <button disabled={!buttonDisabled()} type="submit" className="btn btn-primary w-130" >Publish Event</button>
+
+                            }
+
                         </div>
                     </div>
                 </div>

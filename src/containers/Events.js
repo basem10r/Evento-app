@@ -14,9 +14,11 @@ import EventsDataService from '../services/events.service';
 import { toast, ToastContainer } from 'react-toastify';
 
 const Events = ({ logOut }) => {
+    const ref = firebase.storage();
     const [isList, setIsList] = useState(false);
     const [events, setEvents] = useState([]);
     const [redirect, setredirect] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
     const user = useContext(UserContext);
     useEffect(() => {
         getEvents();
@@ -37,19 +39,28 @@ const Events = ({ logOut }) => {
     }
     // add event 
     const addEvent = (e) => {
-        e.date = moment(e.date.toDate()).format(formats.DATE);
-        e.time = moment(e.time.toDate()).format(formats.TIME);
-        const date = e.date.split(' ');
-        e.childDate = `${date[1]} ${date[0]}`;
-        EventsDataService.create(e)
-            .then(function (docRef) {
-                setEvents([...events, e]);
-                getEvents();
-                toast.success('Event added successfully');
-            })
-            .catch(function (error) {
-                toast.success('Adding event failed');
-            });
+        setIsLoading(true);
+        ref.ref(`/images/${e.imageFile.name}`).put(e.imageFile).then(() => {
+            ref.ref('images').child(e.imageFile.name).getDownloadURL()
+                .then(url => {
+                    e.date = moment(e.date.toDate()).format(formats.DATE);
+                    e.time = moment(e.time.toDate()).format(formats.TIME);
+                    const date = e.date.split(' ');
+                    e.imageUrl = url;
+                    e.imageFile = '';
+                    e.childDate = `${date[1]} ${date[0]}`;
+                    EventsDataService.create(e)
+                        .then(function (docRef) {
+                            setEvents([...events, e]);
+                            getEvents();
+                            toast.success('Event added successfully');
+                            setIsLoading(false);
+                        })
+                        .catch(function (error) {
+                            toast.success('Adding event failed');
+                        });
+                })
+        })
 
     }
     // check user exist 
@@ -101,7 +112,7 @@ const Events = ({ logOut }) => {
                             return (
                                 <div className="e-container__child e-container__child--small mx-auto px-4">
                                     <Header title={strings.ADD_EVENT} />
-                                    <AddForm onAdd={addEvent} />
+                                    <AddForm isLoading={isLoading} onAdd={addEvent} />
                                 </div>
                             )
                         }} />

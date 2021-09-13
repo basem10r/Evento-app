@@ -1,12 +1,10 @@
-import background from '../../assets/images/event.jpg'
 import { Avatar } from '@material-ui/core';
 import { FaAngleLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { strings, eventDetails, formats } from '../../static/Strings';
+import { strings, eventDetails } from '../../static/Strings';
 import EventsDataService from '../../services/events.service';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
-import * as moment from 'moment';
 
 const EventDetails = ({ onAdd }) => {
     const [event, setEvent] = useState({ attenders: [] });
@@ -39,7 +37,7 @@ const EventDetails = ({ onAdd }) => {
                         <span className="e-attend__text">{eventDetails.WANT_TO_ATTEND}</span>
                         <button onClick={addAttender} className="btn btn-primary">RSVP</button>
                     </div>
-                    <img alt='event' src={background}></img>
+                    <img alt='event' src={event.imageUrl}></img>
                 </div>
                 <div className="e-event__block">
                     <h3 className="e-event__title">{event.title}</h3>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { strings } from '../../static/Strings';
-import background from '../../assets/images/event.jpg'
 import { Link } from 'react-router-dom';
 const Event = ({ event }) => {
     return (
@@ -11,7 +10,7 @@ const Event = ({ event }) => {
                         {event.childDate}
                     </p>
                 </div>
-                <img alt={event.title} src={background}></img>
+                <img alt={event.title} src={event.imageUrl}></img>
             </div>
             <div className="d-flex flex-column justify-content-between">
                 <div className="e-event__block">
