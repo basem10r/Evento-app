@@ -1,0 +1,109 @@
+.e-form {
+  background: $white;
+  border-radius: 25px;
+  padding: 40px;
+  @media #{$max-mobile} {
+    padding: 20px;
+  }
+  &__line {
+    margin: 24px 0;
+    height: 1px;
+    width: 100%;
+    background: $secondary;
+  }
+  &__label {
+    margin-top: 5px;
+    span {
+      color: $danger;
+    }
+    @media #{$max-mobile} {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.e-placeholder {
+  &__image {
+    width: 250px;
+    height: 120px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $secondary;
+    font-size: 50px;
+    color: darken($color: $secondary, $amount: 20%);
+  }
+}
+
+.MuiInputBase-root,
+.MuiFilledInput-root {
+  background: $secondary !important;
+  background-color: $secondary !important;
+  line-height: 1.1876em !important;
+  padding: 0;
+  height: 48px;
+  border-radius: 10px !important;
+  border: 1px solid darken($color: $secondary, $amount: 5%);
+  font-family: $font-family !important;
+  .MuiIconButton-root {
+    color: $primary !important;
+  }
+  .MuiInputBase-input {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.MuiInputBase-root input {
+  &::placeholder {
+    color: darken($color: $gray-600, $amount: 100%) !important;
+  }
+}
+.MuiFilledInput-root input {
+  &::placeholder {
+    color: darken($color: $gray-600, $amount: 100%) !important;
+  }
+}
+.PrivateNotchedOutline-root-1,
+.MuiFilledInput-underline:before,
+.MuiFilledInput-underline:after,
+.MuiInput-underline:before {
+  display: none !important;
+}
+
+#date,
+#time {
+  padding-left: 14px;
+}
+.MuiOutlinedInput-multiline {
+  height: auto;
+}
+.e-upload {
+  &__field {
+    background: $secondary;
+    border: 1px solid darken($color: $secondary, $amount: 5%);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 15px;
+  }
+  &__btn {
+    border-radius: 0;
+  }
+}
+
+.MuiPickersToolbar-toolbar,
+.MuiPickersClock-pin,
+.MuiPickersClockPointer-pointer,
+.MuiPickersClockNumber-clockNumberSelected,
+.MuiPickersDay-daySelected {
+  background: $primary !important;
+}
+.MuiButton-textPrimary {
+  color: $primary !important;
+}
+
+.MuiInput-colorSecondary.MuiInput-underline:after,
+.MuiInput-underline:after {
+  border: 0 !important;
+}

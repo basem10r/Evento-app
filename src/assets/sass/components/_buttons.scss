@@ -7,8 +7,13 @@
   justify-content: center !important;
   align-items: center !important;
   box-shadow: none !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
   color: $black !important;
+  border: 0;
+  img {
+    width: 25px;
+    margin-right: 10px;
+  }
   div {
     padding: 0 !important;
     margin-right: 10px !important;
@@ -31,6 +36,16 @@
   @include transition();
   &-primary {
     background: $primary;
+    &-upload {
+      border-radius: 10px;
+    }
+    &:disabled {
+      background: $primary;
+      cursor: not-allowed;
+      &:hover {
+        background: $primary;
+      }
+    }
   }
   &-icon {
     padding: 0 8px;

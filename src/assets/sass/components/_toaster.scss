@@ -1,0 +1,18 @@
+.Toastify__toast {
+    @include shadow(0, 0, 35px, 0px, rgba($black, 0.1));
+}
+.Toastify__toast--success {
+    background: lighten($success-color, 50%) !important;
+    color: $success-color;
+}
+.Toastify__toast--warning {
+    background: lighten($warning-color, 45%) !important;
+    color: $warning-color;
+}
+.Toastify__toast--danger {
+    background: lighten($danger-color, 35%) !important;
+    color: $danger-color;
+}
+.Toastify__toast-icon {
+    display: none;
+}

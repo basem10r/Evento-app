@@ -2,9 +2,18 @@
     width: 100%;
     height: 100%;
     padding-left: 80px;
+    @media #{$max-mobile} {
+        padding-left: 0;
+    }
     &__child {
-        padding-top: 50px;
+        padding-top: 60px;
         padding-bottom: 100px;
         max-width: 1000px;
+        &--small {
+            max-width: 750px;
+        }
+        @media #{$max-mobile} {
+            padding-top: 80px;
+        }
     }
 }

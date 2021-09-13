@@ -1,11 +1,22 @@
 .e-login {
     height: 100vh;
+    @media #{$max-mobile} {
+        height: auto;
+        display: block !important;
+    }
     &__right {
         background-size: cover;
         background-position: bottom left;
+        padding: 24px !important;
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 550px;
+        }
     }
     &__left {
         background-color: $secondary;
+        padding: 24px !important;
     }
     &__cont {
         max-width: 350px;
