@@ -8,7 +8,6 @@ export default (props) => {
         auth.onAuthStateChanged(async (res) => {
             if (res) {
                 const user = res.providerData[0];
-                debugger;
                 const userObj = {
                     id: user.uid,
                     name: user.displayName,

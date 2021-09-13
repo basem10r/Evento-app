@@ -37,7 +37,6 @@ const Events = ({ logOut }) => {
     }
     // add event 
     const addEvent = (e) => {
-        debugger;
         e.date = moment(e.date.toDate()).format(formats.DATE);
         e.time = moment(e.time.toDate()).format(formats.TIME);
         const date = e.date.split(' ');
@@ -59,7 +58,6 @@ const Events = ({ logOut }) => {
     }
     // book event
     const addEventAttenders = (event) => {
-        debugger;
         if (!userExist(event)) {
             if (event.id) {
                 const userObj = user;
