@@ -36,7 +36,7 @@ const AddForm = ({ isLoading, onAdd }) => {
     }
     // disable submit button 
     const buttonDisabled = () => {
-        return event.title && event.types && event.location && event.desc && event.cost && event.date && event.time
+        return event.imageFile && event.title && event.types && event.location && event.desc && event.cost && event.date && event.time
     }
     // submitting
     const onSubmit = (e) => {
