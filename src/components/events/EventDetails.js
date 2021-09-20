@@ -50,7 +50,7 @@ const EventDetails = ({ onAdd }) => {
                             <span>{event.types}</span>
                         </div>
                         <div className="col-6 e-properties__element ">
-                            <p className="e-properties__title">{eventDetails.ADDMISSION_COST}</p>
+                            <p className="e-properties__title">{eventDetails.ADDMISSION_COST}$</p>
                             <span>{event.cost}</span>
                         </div>
                         <div className="col-12 e-properties__element">
