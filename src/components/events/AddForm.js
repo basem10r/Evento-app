@@ -30,9 +30,15 @@ const AddForm = ({ isLoading, onAdd }) => {
             setEvent({ ...event, [prop]: e.target.value });
     };
 
+    // handle file change 
     const handleFileChange = (prop) => (e) => {
         const image = e.target.files[0]
         setEvent({ ...event, [prop]: image });
+    }
+    // handle cost change
+    const handleCostChange = (prop) => (e) => {
+        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        setEvent({ ...event, [prop]: e.target.value });
     }
     // disable submit button 
     const buttonDisabled = () => {
@@ -155,7 +161,8 @@ const AddForm = ({ isLoading, onAdd }) => {
                                     type="number"
                                     name="cost"
                                     value={event.cost}
-                                    onChange={handleChange('cost')}
+                                    onInput={handleCostChange('cost')}
+
                                     startAdornment={<InputAdornment position="start">$</InputAdornment>}
                                 />
                             </FormControl>
