@@ -40,8 +40,8 @@ const EventDetails = ({ onAdd }) => {
                     <img alt='event' src={event.imageUrl}></img>
                 </div>
                 <div className="e-event__block">
-                    <h3 className="e-event__title">{event.title}</h3>
-                    <p className="e-event__desc">
+                    <h3 className="e-event__title text-truncate">{event.title}</h3>
+                    <p className="e-event__desc text-wordbreak">
                         {event.desc}
                     </p>
                     <div className="e-properties row d-flex mt-4">

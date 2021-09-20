@@ -14,7 +14,7 @@ const Event = ({ event }) => {
             </div>
             <div className="d-flex flex-column justify-content-between">
                 <div className="e-event__block">
-                    <h3 className="e-event__title">{event.title}</h3>
+                    <h3 className="e-event__title text-truncate">{event.title}</h3>
                     <p className="e-event__desc"><span className="truncate-lines">{event.desc}</span></p>
 
                 </div>

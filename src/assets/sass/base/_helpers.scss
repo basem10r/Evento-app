@@ -85,3 +85,11 @@
   margin-left: -15px;
   margin-right: -15px;
 }
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-wordbreak {
+  word-break: break-all;
+}
