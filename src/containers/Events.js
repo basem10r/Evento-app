@@ -40,7 +40,8 @@ const Events = ({ logOut }) => {
     // add event 
     const addEvent = (e) => {
         setIsLoading(true);
-        ref.ref(`/images/${e.imageFile.name}`).put(e.imageFile).then(() => {
+        const randomId = Math.random().toString(36).slice(2);
+        ref.ref(`/images/${e.imageFile.name}-${randomId}`).put(e.imageFile).then(() => {
             ref.ref('images').child(e.imageFile.name).getDownloadURL()
                 .then(url => {
                     e.date = moment(e.date.toDate()).format(formats.DATE);
